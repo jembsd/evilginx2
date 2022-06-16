@@ -24,6 +24,9 @@ RUN apk add --update \
     ca-certificates \
   && rm -rf /var/cache/apk/*
 
+WORKDIR /root
+COPY ./blacklist.txt /root/.evilginx/
+
 WORKDIR /app
 
 COPY --from=build /go/src/github.com/kgretzky/evilginx2/bin/evilginx /app/evilginx
