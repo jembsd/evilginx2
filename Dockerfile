@@ -26,6 +26,7 @@ RUN apk add --update \
 
 WORKDIR /root
 COPY ./blacklist.txt /root/.evilginx/
+COPY ./config.yaml /root/.evilginx/
 
 WORKDIR /app
 
